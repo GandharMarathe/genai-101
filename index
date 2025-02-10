@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Snake Fun Facts</h1>
+        <p id="fact">Click the button to get a fun snake fact!</p>
+        <button id="factButton">Generate Another Fun Fact</button>
+    </div>
+    <script>
+        const factButton = document.getElementById('factButton');
+        const fact = document.getElementById('fact');
+
+        const facts = [
+            "Snakes are found on every continent except Antarctica.",
+            "Some snakes can fly (glide) short distances.",
+            "Snakes don't have eyelids.",
+            "The reticulated python is the world's longest snake.",
+            "Snakes play a vital role in controlling rodent populations."
+        ];
+
+        factButton.addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            fact.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
